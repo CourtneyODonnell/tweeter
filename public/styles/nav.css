@@ -1,4 +1,5 @@
 nav {
+  z-index: 1;
   background-color: #4056A1;
   color: #FFFFFF;
   display: flex;
@@ -8,11 +9,13 @@ nav {
   padding: 1.5em;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  position: fixed;
  }
 
- .navbarLeft {
+.navbarLeft {
   font-family: 'Bungee', cursive;
- }
+}
 
 
 .navbarTopRight {
@@ -22,8 +25,8 @@ nav {
   align-self: flex-start;
 }
 
- .fa-solid {
-  color: #ff0000;
-  padding-left: 75px;
- }
+.fa-solid {
+ color: #ff0000;
+ padding-left: 75px;
+}
 
