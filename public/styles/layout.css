@@ -20,22 +20,9 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  z-index: 99;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
-
-.body {
-  display: flex;
-  justify-content: center;
-  font-family: 'Source Sans Pro', sans-serif;
-  position: absolute;
-
- }
-.header {
-  display: flex;
-  justify-content: center;
-  display: flex;
- }
