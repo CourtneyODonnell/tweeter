@@ -20,9 +20,26 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  z-index: 99;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+body {
+  width: 100%;
+  z-index: 99;
+  flex-direction: column;
+ }
+
+main {
+  width: 90%;
+  background-color: #f4f1ec;
+  border-left: 50px;
+  border-right: 50px;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+}
+
+
