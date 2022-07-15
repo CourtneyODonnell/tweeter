@@ -52,12 +52,28 @@
 
 
     <!-- Page-specific (main) content here -->
+
     <main class="container">
-      <h1>Lorem ipsum dolor sit amet, </h1><br>
-      <p>consectetur adipiscing elit, <br></p>
-      <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br> </p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br></p>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+      <section class="new-tweet">
+
+        <h2>Compose Tweet</h2>
+
+        <form>
+          
+          <label for="tweet-text">What are you humming about?</label>
+          
+          <textarea name="text" id="tweet-text"></textarea>
+          
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+       
+        </form>
+     
+     
+      </section>
 
 
 
