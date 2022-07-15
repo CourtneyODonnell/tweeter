@@ -4,18 +4,10 @@ header {
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
-  align-self: center;
   align-items: center;
   height: 400px;
+  background-color: #a86620;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
   width: 100%;
-  flex-direction: row;
-  background-image: url("https://picjumbo.com/wp-content/uploads/calm-sea-background-2210x1473.jpg");
-}
-.topHeader {
-  gap: 10px;
-}
-.bottomHeader {
-  gap: 10px;
-  flex-wrap: wrap;
-  flex-grow: 1;
+  flex-flow: column wrap;
 }
