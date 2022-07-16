@@ -1,0 +1,38 @@
+.new-tweet {
+  align-items:center
+  justify-content: center;
+  width: 90%;
+  display: flex;
+}
+.prompter {
+  border-bottom: 4mm ridge rgba(211, 220, 50, .6);
+  height: 50px;
+  margin-top: 10px;
+}
+#tweet-text {
+  width: 100%;
+}
+#tweet-button {
+  font-family: 'Bungee', cursive;
+  background-color: #4c81af;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.rightSideInput {
+  margin-left: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottomForm {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 10px;;
+  flex-direction: row;
+  justify-content: space-between;
+}
