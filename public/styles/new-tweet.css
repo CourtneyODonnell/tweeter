@@ -11,6 +11,7 @@
 }
 #tweet-text {
   width: 100%;
+  margin-top: 10px;
 }
 #tweet-button {
   font-family: 'Bungee', cursive;
