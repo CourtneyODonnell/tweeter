@@ -3,3 +3,5 @@ $(document).ready(function() {
 
 
 });
+
+// reference for character counter: https://www.youtube.com/watch?v=X-LVkU95jLU

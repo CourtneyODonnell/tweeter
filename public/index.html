@@ -57,7 +57,21 @@
             </div>
             <div class="bottomForm">
               <button id="tweet-button" type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
+
+              <output name="counter" class="counter" for="tweet-text" id="tweet-counter">140</output>
+              <script>
+                const myTextArea = document.getElementById('tweet-text');
+                const remainingCharsText = document.getElementById('tweet-counter');
+                const maxChars = 140;
+
+                //eventlistener for input
+                myTextArea.addEventListener('input', () => {
+                  const remaining = maxChars - myTextArea.value.length;
+                  remainingCharsText.textContent = `${remaining}`;
+                });
+              </script>
+
+              <!-- reference for character counter: https://www.youtube.com/watch?v=X-LVkU95jLU -->
             </div>
           </form>
         </div>

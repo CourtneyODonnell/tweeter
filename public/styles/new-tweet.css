@@ -36,4 +36,9 @@
   margin-top: 10px;;
   flex-direction: row;
   justify-content: space-between;
+
+}
+
+.counter {
+  font-weight: bold;
 }
