@@ -67,7 +67,10 @@
                 //eventlistener for input
                 myTextArea.addEventListener('input', () => {
                   const remaining = maxChars - myTextArea.value.length;
+                  //if the remaining chars is less than 10%, color the text red
+                  const color = remaining < maxChars * 0.1 ? 'red' : null;
                   remainingCharsText.textContent = `${remaining}`;
+                  remainingCharsText.style.color = color;
                 });
               </script>
 
