@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -59,20 +59,7 @@
               <button id="tweet-button" type="submit">Tweet</button>
 
               <output name="counter" class="counter" for="tweet-text" id="tweet-counter">140</output>
-              <script>
-                const myTextArea = document.getElementById('tweet-text');
-                const remainingCharsText = document.getElementById('tweet-counter');
-                const maxChars = 140;
-
-                //eventlistener for input
-                myTextArea.addEventListener('input', () => {
-                  const remaining = maxChars - myTextArea.value.length;
-                  //if the remaining chars is less than 10%, color the text red
-                  const color = remaining < maxChars * 0.1 ? 'red' : null;
-                  remainingCharsText.textContent = `${remaining}`;
-                  remainingCharsText.style.color = color;
-                });
-              </script>
+              
 
               <!-- reference for character counter: https://www.youtube.com/watch?v=X-LVkU95jLU -->
             </div>
