@@ -12,7 +12,7 @@ nav {
   flex-grow: 1;
   justify-content: space-between;
  }
-.navbarLeft {
+span {
   font-family: 'Bungee', cursive;
 }
 .navbarRight {
