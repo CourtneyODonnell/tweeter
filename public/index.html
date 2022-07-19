@@ -13,12 +13,16 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+  
     <!-- External JS -->
+    <script src="https://kit.fontawesome.com/ee1615710d.js" crossorigin="anonymous"></script>  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  
   </head>
   <body>
     <!-- Top nav bar (fixed) -->
@@ -66,7 +70,27 @@
           </form>
         </div>
       </section>
-      <div id="tweet-container"></div>
+      <article>
+        <div class="top-of-tweets">
+          <i class="fa-regular fa-user"></i>
+          Username
+          
+        </div>
+        <div class="tweet-content">
+          This is the tweet text body
+        </div>
+        <div class="bottom-of-tweets">
+          <span id="leftbottom-of-tweets">10 days ago</span>
+          <span id="rightbottom-of-tweets">
+            <i class="fa-regular fa-flag"></i>
+            <i class="fa-solid fa-repeat"></i>
+            <i class="fa-regular fa-heart"></i>
+          </span>
+        </div>
+      </article>
     </main>
   </body>
 </html>
+
+<i class="fa-duotone fa-bird"></i>
+<i class="fa-regular fa-bird"></i>
