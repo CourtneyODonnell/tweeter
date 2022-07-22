@@ -5,7 +5,7 @@
     <title>Tweeter - Home Page</title>
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <!-- App CSS -->
@@ -31,20 +31,21 @@
       
       <div class="navbarRight">
         <span class="top"><strong>Write</strong> a new tweet</span>
-        <i class="fa-solid fa-angles-down"></i>
+        <i class="fa-solid fa-angles-down" id="arrows-in-nav"></i>
       </div>
     </nav>
-  <header>
-    <div class="topHeader">
+    <header id="main-header">
+
       <img src="/images/profile-hex.png" alt="avatar">
-    </div>
     
-    <br>
     
-    <div class ="bottomHeader">
-      <h2>Courtney O'Donnell</h2>
-    </div>
-  </header>
+      <br>
+    
+        <div class ="bottomHeader">
+          <h2>Courtney O'Donnell</h2>
+        </div>
+    </header>
+    
     <!-- Page-specific (main) content here -->
     <main class="container">
 
@@ -70,27 +71,43 @@
           </form>
         </div>
       </section>
-      <article>
-        <div class="top-of-tweets">
-          <i class="fa-regular fa-user"></i>
-          Username
-          
-        </div>
-        <div class="tweet-content">
-          This is the tweet text body
-        </div>
-        <div class="bottom-of-tweets">
-          <span id="leftbottom-of-tweets">10 days ago</span>
-          <span id="rightbottom-of-tweets">
-            <i class="fa-regular fa-flag"></i>
-            <i class="fa-solid fa-repeat"></i>
-            <i class="fa-regular fa-heart"></i>
-          </span>
-        </div>
-      </article>
-    </main>
-  </body>
-</html>
 
-<i class="fa-duotone fa-bird"></i>
-<i class="fa-regular fa-bird"></i>
+        <section class="tweeter-feed">
+      
+          <article class="each-tweet-on-tweeter-feed">
+          
+            <header class="top-of-tweets">
+              <i class="fa-regular fa-user"></i>
+              Username  
+            </header>
+        
+            <div class="tweet-content">
+              This is the tweet text body
+            </div>
+          
+            <footer class="bottom-of-tweets">
+
+              <span class="leftbottom-of-tweets">
+                10 days ago
+              </span>
+            
+              <span class="rightbottom-of-tweets">
+                <i class="fa-regular fa-flag" id="report"></i>
+                <i class="fa-solid fa-repeat" id="retweet"></i>
+                <i class="fa-regular fa-heart" id="like"></i>
+              </span>
+
+            </footer>
+            <!-- end of bottom-of-tweets -->
+          </article>
+          <!-- end of article -->
+        </section> 
+        <!-- end of tweeter-feed -->
+
+      </div>
+
+    </main>
+
+  </body>
+
+</html>

@@ -1,7 +1,7 @@
 nav {
   z-index: 100;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: #f1c4f8;
+  color: #dc9cfa;
   width: 100%;
   position: fixed;
   height: 120px;
@@ -22,8 +22,8 @@ span {
   align-items: center;
 }
 
-.fa-solid {
-  color: #ff0000; 
+#arrows-in-nav {
+  color: #ff00c3; 
  }
 
 

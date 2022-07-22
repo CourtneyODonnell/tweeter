@@ -5,7 +5,7 @@
   display: flex;
 }
 .prompter {
-  border-bottom: 4mm ridge rgba(211, 220, 50, .6);
+  border-bottom: 4mm ridge #f9d0fb;
   height: 50px;
   margin-top: 10px;
 }
@@ -15,7 +15,7 @@
 }
 #tweet-button {
   font-family: 'Bungee', cursive;
-  background-color: #4c81af;
+  background-color: #e4b9f7;
   border: none;
   color: white;
   padding: 15px 15px;

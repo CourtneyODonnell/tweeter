@@ -17,8 +17,8 @@ html {
 body {
   display: flex;
   font-family: 'Source Sans Pro', sans-serif;
-  color: #545149;
-  background-color: #f4f1ec;
+  color: #5d3865;
+  background-color: #ecf0f4;
   font-size: 24px;
 }
 
@@ -34,7 +34,6 @@ body {
 
 main {
   width: 90%;
-  background-color: #f4f1ec;
   border-left: 50px;
   border-right: 50px;
   justify-content: center;
