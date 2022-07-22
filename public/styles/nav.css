@@ -11,6 +11,7 @@ nav {
   flex-shrink: 1;
   flex-grow: 1;
   justify-content: space-between;
+  top: 0;
  }
 span {
   font-family: 'Bungee', cursive;
