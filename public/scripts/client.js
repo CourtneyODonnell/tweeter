@@ -22,7 +22,7 @@ const createTweetElement = function(data) {
           
             <footer class="bottom-of-tweets">
               <span class="leftbottom-of-tweets">
-                ${data.created_at}
+              ${timeago.format(data.created_at)}
               </span>
             
               <span class="rightbottom-of-tweets">
