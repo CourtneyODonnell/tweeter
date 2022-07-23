@@ -4,48 +4,25 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
 
 //creates formatted tweet from object data
-const createTweetElement = function(tweet) {
+const createTweetElement = function(data) {
   let $tweet = $(`
       <article class="each-tweet-on-tweeter-feed">
           
             <header class="top-of-tweets">
-              <img class="user-avatar" src="${tweet.user.avatars}"></img>
-              ${tweet.user.name}
-              <span class="handle">${tweet.user.handle}</span>
+              <img class="user-avatar" src="${data.user.avatars}"></img>
+              ${data.user.name}
+              <span class="handle">${data.user.handle}</span>
             </header>
         
             <div class="tweet-content">
-              ${tweet.content.text}
+              ${data.content.text}
             </div>
           
             <footer class="bottom-of-tweets">
               <span class="leftbottom-of-tweets">
-                ${tweet.created_at}
+                ${data.created_at}
               </span>
             
               <span class="rightbottom-of-tweets">
@@ -53,20 +30,18 @@ const createTweetElement = function(tweet) {
                 <i class="fa-solid fa-repeat" id="retweet"></i>
                 <i class="fa-regular fa-heart" id="like"></i>
               </span>
-
             </footer>
             <!-- end of bottom-of-tweets -->
           </article>
   `);
   return $tweet;
-
 };
 
 
 //appends tweets to container
-const renderTweets = function(tweets) {
+const renderTweets = function(data) {
   //loops through tweets
-  for (const tweet of tweets) {
+  for (const tweet of data) {
     //create tweet element for each tweet
     //takes return value and appends it to the tweets container
     $('.tweeter-feed').append(createTweetElement(tweet));
@@ -86,19 +61,39 @@ $(document).ready(function() {
       method: 'POST',
       data: $(this).serialize()
     })
-      .then(function(data) {
-        console.log('db received tweet');
-        $('tweet-text').val('');
+      .then(function(tweet) {
+        $('.tweet-text').val('');
       })
       .catch((err) => {
-        console.log('error: oops, something went wrong');
+        console.log('POST error: oops, something went wrong', err);
       });
   });
-  renderTweets(data);
+
 
   //define function load tweets
   const loadTweets = function() {
-    //fetch tweets from /tweets
-    
-  }
+    //responsible for fetching tweets from /tweets page
+    //use jQuery to make a request to /tweets and receive the array of tweets as JSON
+    $.ajax('/tweets', {
+      method: 'GET'
+    })
+    //if the request is successful, render the tweets
+      .then((tweets) => {
+        renderTweets(tweets);
+      })
+      // catch any errors and log them
+      .catch((err) => {
+        console.log('GET error: oops, something went wrong');
+      });
+  
+  };
+  // call load tweets function
+  loadTweets();
+
 });
+
+// You already have a renderTweets function defined which can take in this array of objects and render them to the DOM, 
+//so your success callback function will simply call up renderTweets, passing it the response from the AJAX request.
+
+// Because we've done the leg work of iterating over and rendering the tweet objects in a previous exercise,
+//we only really have to worry about making the AJAX get request and then delegating the work to our renderTweets function.
