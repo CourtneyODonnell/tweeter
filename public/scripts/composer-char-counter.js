@@ -6,16 +6,6 @@ $(document).ready(function() {
   const remainingCharsText = document.getElementById('tweet-counter');
   const maxChars = 140;
 
-  const updateCountdown = function() {
-    let remaining = 140 - jQuery('#tweet-text').val().length;
-    jQuery('#tweet-counter').text(remaining);
-  };
-
-  jQuery(document).ready(function($) {
-    updateCountdown();
-    $('#tweet-text').change(updateCountdown);
-    $('#tweet-text').keyup(updateCountdown);
-  });
 
   //eventlistener for input
   myTextArea.addEventListener('input', () => {
