@@ -50,12 +50,28 @@ const renderTweets = function(data) {
 
 $(document).ready(function() {
   console.log('doc ready');
-
   //add an event listener for submit
   $("form.tweetSubmit").on("submit", function(event) {
     console.log('tweet received from client, submitting to db');
     // prevent listener's default behaviour
     event.preventDefault();
+   
+    //form validation
+    const maxiumumChars = 140;
+    const inputLength = $(this).find("textarea").val().length;
+
+    if (!inputLength) {
+      return alert("Please enter a tweet");
+    } else if (inputLength - maxiumumChars > 0) {
+      return alert("Your tweet is too long");
+    } else {
+      const newTweet = $(this).serialize();
+      $.post("/tweets", newTweet);
+    }
+       
+
+
+
     //Serialize the form data and send it to the server as a query string.
     $.ajax('/tweets', {
       method: 'POST',
@@ -92,3 +108,8 @@ $(document).ready(function() {
   loadTweets();
 
 });
+
+
+/* resources:
+https://stackoverflow.com/questions/17865148/using-jquery-to-prevent-form-submission-when-input-fields-are-empty
+*/
