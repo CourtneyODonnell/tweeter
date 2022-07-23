@@ -49,7 +49,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
-      <section class="new-tweet">
+      <section class="new-tweet" id="compose-area">
 
         <h2>Compose Tweet:</h2>
         <div class="rightSideInput">
@@ -73,34 +73,6 @@
       </section>
 
         <section class="tweeter-feed">
-      
-          <article class="each-tweet-on-tweeter-feed">
-          
-            <header class="top-of-tweets">
-              <i class="fa-regular fa-user"></i>
-              Username  
-            </header>
-        
-            <div class="tweet-content">
-              This is the tweet text body
-            </div>
-          
-            <footer class="bottom-of-tweets">
-
-              <span class="leftbottom-of-tweets">
-                10 days ago
-              </span>
-            
-              <span class="rightbottom-of-tweets">
-                <i class="fa-regular fa-flag" id="report"></i>
-                <i class="fa-solid fa-repeat" id="retweet"></i>
-                <i class="fa-regular fa-heart" id="like"></i>
-              </span>
-
-            </footer>
-            <!-- end of bottom-of-tweets -->
-          </article>
-          <!-- end of article -->
         </section> 
         <!-- end of tweeter-feed -->
 
@@ -111,3 +83,13 @@
   </body>
 
 </html>
+
+<!-- 
+  TO DO (notes from CODE REVIEW):
+
+  Note You could use shorter and conventional class names:
+    - each-tweet-on-tweeter-feed could be tweet-item.
+    - top-of-tweets could be tweet-top.
+    - bottom-of-tweets could be tweet-bottom.
+    - leftbottom-of-tweets could be tweet-bottom-left
+-->
