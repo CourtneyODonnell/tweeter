@@ -75,7 +75,8 @@ $(document).ready(function() {
     //responsible for fetching tweets from /tweets page
     //use jQuery to make a request to /tweets and receive the array of tweets as JSON
     $.ajax('/tweets', {
-      method: 'GET'
+      method: 'GET',
+      url: 'http://localhost:8080/tweets',
     })
     //if the request is successful, render the tweets
       .then((tweets) => {
@@ -83,7 +84,7 @@ $(document).ready(function() {
       })
       // catch any errors and log them
       .catch((err) => {
-        console.log('GET error: oops, something went wrong');
+        console.log('GET error: oops, something went wrong', err);
       });
   
   };
@@ -91,9 +92,3 @@ $(document).ready(function() {
   loadTweets();
 
 });
-
-// You already have a renderTweets function defined which can take in this array of objects and render them to the DOM, 
-//so your success callback function will simply call up renderTweets, passing it the response from the AJAX request.
-
-// Because we've done the leg work of iterating over and rendering the tweet objects in a previous exercise,
-//we only really have to worry about making the AJAX get request and then delegating the work to our renderTweets function.
