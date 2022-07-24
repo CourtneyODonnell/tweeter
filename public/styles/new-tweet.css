@@ -45,8 +45,12 @@
 }
 
 #error {
+  display: none;
   color: #ff0000;
   border: #ff0000 solid 2px;
   font-weight: bold;
   padding: 0.25em;
+}
+#relevant-error {
+  color: #ff0000;
 }

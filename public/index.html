@@ -23,7 +23,9 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  
+    <!-- Responsive Design -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   </head>
   <body>
     <!-- Top nav bar (fixed) -->
@@ -35,6 +37,8 @@
         <i class="fa-solid fa-angles-down" id="arrows-in-nav"></i>
       </div>
     </nav>
+    
+  <section id="below-navbar">
     <header id="main-header">
 
       <img src="/images/profile-hex.png" alt="avatar">
@@ -43,7 +47,7 @@
       <br>
     
         <div class ="bottomHeader">
-          <h2>Courtney O'Donnell</h2>
+          Courtney O'Donnell
         </div>
     </header>
     
@@ -60,6 +64,7 @@
             <div class="inputForm">
               <!-- display validation error messages. -->
               <section id="error">Error:</section>
+              <p id="relevant-error"></p>
               <textarea name="text" id="tweet-text"></textarea>
             </div>
             <div class="bottomForm">
@@ -68,13 +73,12 @@
 
               <output name="counter" class="counter" for="tweet-text" id="tweet-counter">140</output>
               
-
               <!-- reference for character counter: https://www.youtube.com/watch?v=X-LVkU95jLU -->
             </div>
           </form>
         </div>
       </section>
-
+  </section>   <!-- end of below-navbar section -->
         <section class="tweeter-feed">
         </section> 
         <!-- end of tweeter-feed -->
@@ -82,7 +86,7 @@
       </div>
 
     </main>
-
+  
   </body>
 
 </html>

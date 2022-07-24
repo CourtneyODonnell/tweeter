@@ -11,6 +11,7 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
+
 //appends tweets to container
 const renderTweets = function(data) {
   $('.tweeter-feed').empty();
@@ -54,6 +55,8 @@ const createTweetElement = function(data) {
   return $tweet;
 };
 
+
+
 //define function load tweets
 const loadTweets = function() {
   //responsible for fetching tweets from /tweets page
@@ -79,10 +82,6 @@ loadTweets();
 
 $(document).ready(function() {
 
-
-
-
-  
   //add an event listener for submit
   $("form.tweetSubmit").on("submit", function(event) {
     console.log('tweet received from client, submitting to db');
@@ -96,14 +95,15 @@ $(document).ready(function() {
     const inputLength = $(this).find("textarea").val().length;
    
 
-    //Replace the alert calls with jQuery calls that hide/show the error element.
+    //jQuery error calls that hide/show the error element.
     if (!inputLength) {
-      //return alert("Please enter a tweet");
-      return $('#error').text("Try again: Please enter a tweet!");
+      $('#error').slideDown();
+      return $('#error').text("Please enter a tweet!");
     } else if (inputLength - maxiumumChars > 0) {
-      //return alert("Your tweet is too long");
-      return $('#error').text("Try again: Your tweet is too long!");
+      $('#error').slideDown();
+      return $('#error').text("Your tweet is too long!");
     }
+    
 
     //Serialize the form data and send it to the server as a query string.
     $.ajax('/tweets', {
