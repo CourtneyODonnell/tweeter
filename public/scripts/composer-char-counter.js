@@ -26,10 +26,3 @@ https://stackoverflow.com/questions/2136647/character-countdown-like-on-twitter
 https://stackoverflow.com/questions/2001366/how-can-i-change-the-text-color-with-jquery#:~:text=Place%20the%20following%20in%20your,color'%2C%20'red')%3B
 */
 
-// $(document).ready(function() {
-//   $(".form__textarea").on('input', function(event) {
-//     let $input = $(his);
-//     let len = $input.val().length;
-//     let charsLeft = 140 - len;
-//   })
-// }

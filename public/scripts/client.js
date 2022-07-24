@@ -12,7 +12,7 @@ const renderTweets = function(data) {
     //create tweet element for each tweet
     const $tweet = createTweetElement(tweet);
     //takes return value and appends it to the tweets container
-    $('.tweeter-feed').prepend($tweet);
+    $('.tweeter-feed').append($tweet);
   }
 };
   //creates formatted tweet from object data
@@ -75,30 +75,36 @@ $(document).ready(function() {
   //add an event listener for submit
   $("form.tweetSubmit").on("submit", function(event) {
     console.log('tweet received from client, submitting to db');
+    const newTweet = $(this).serialize();
+
     // prevent listener's default behaviour
     event.preventDefault();
      
     //form validation
     const maxiumumChars = 140;
     const inputLength = $(this).find("textarea").val().length;
-  
+   
+
     if (!inputLength) {
       return alert("Please enter a tweet");
     } else if (inputLength - maxiumumChars > 0) {
       return alert("Your tweet is too long");
     }
-    const newTweet = $(this).serialize();
 
     //Serialize the form data and send it to the server as a query string.
     $.ajax('/tweets', {
       method: 'POST',
-      data: $(this).serialize()
+      data: newTweet,
     })
       .then(function(tweet) {
         $('.tweet-text').val('');
+        loadTweets();
       })
       .catch((err) => {
         console.log('POST error: oops, something went wrong', err);
       });
+    
+
   });
+
 });
