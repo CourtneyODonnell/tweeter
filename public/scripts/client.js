@@ -3,7 +3,14 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-console.log('doc ready');
+
+//prevent cross-site scripting attacks
+const escape = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 //appends tweets to container
 const renderTweets = function(data) {
   $('.tweeter-feed').empty();
@@ -21,18 +28,18 @@ const createTweetElement = function(data) {
        <article class="each-tweet-on-tweeter-feed">
           
              <header class="top-of-tweets">
-               <img class="user-avatar" src="${data.user.avatars}"></img>
-                ${data.user.name}
-                <span class="handle">${data.user.handle}</span>
+               <img class="user-avatar" src="${escape(data.user.avatars)}"></img>
+                ${escape(data.user.name)}
+                <span class="handle">${escape(data.user.handle)}</span>
               </header>
         
               <div class="tweet-content">
-                ${data.content.text}
+                ${escape(data.content.text)}
              </div>
           
              <footer class="bottom-of-tweets">
                 <span class="leftbottom-of-tweets">
-                ${timeago.format(data.created_at)}
+                ${escape(timeago.format(data.created_at))}
                 </span>
             
                <span class="rightbottom-of-tweets">
@@ -71,6 +78,10 @@ loadTweets();
 
 
 $(document).ready(function() {
+
+
+
+
   
   //add an event listener for submit
   $("form.tweetSubmit").on("submit", function(event) {
