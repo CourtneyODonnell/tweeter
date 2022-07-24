@@ -11,7 +11,6 @@ const escape = function(str) {
   return div.innerHTML;
 };
 
-
 //appends tweets to container
 const renderTweets = function(data) {
   $('.tweeter-feed').empty();
@@ -26,9 +25,9 @@ const renderTweets = function(data) {
   //creates formatted tweet from object data
 const createTweetElement = function(data) {
   let $tweet = $(`
-       <article class="each-tweet-on-tweeter-feed">
+       <article class="tweet-item">
           
-             <header class="top-of-tweets">
+             <header class="tweet-top">
                <img class="user-avatar" src="${escape(data.user.avatars)}"></img>
                 ${escape(data.user.name)}
                 <span class="handle">${escape(data.user.handle)}</span>
@@ -38,24 +37,22 @@ const createTweetElement = function(data) {
                 ${escape(data.content.text)}
              </div>
           
-             <footer class="bottom-of-tweets">
-                <span class="leftbottom-of-tweets">
+             <footer class="tweet-bottom">
+                <span class="left-tweet-bottom">
                 ${escape(timeago.format(data.created_at))}
                 </span>
             
-               <span class="rightbottom-of-tweets">
+               <span class="right-tweet-bottom">
                   <i class="fa-regular fa-flag" id="report"></i>
                   <i class="fa-solid fa-repeat" id="retweet"></i>
                   <i class="fa-regular fa-heart" id="like"></i>
                 </span>
              </footer>
-             <!-- end of bottom-of-tweets -->
+             <!-- end of tweet-bottom -->
            </article>
     `);
   return $tweet;
 };
-
-
 
 //define function load tweets
 const loadTweets = function() {
@@ -79,7 +76,6 @@ const loadTweets = function() {
   // call load tweets function
 loadTweets();
 
-
 $(document).ready(function() {
 
   //add an event listener for submit
@@ -94,7 +90,6 @@ $(document).ready(function() {
     const maxiumumChars = 140;
     const inputLength = $(this).find("textarea").val().length;
    
-
     //jQuery error calls that hide/show the error element.
     if (!inputLength) {
       $('#error').slideDown();
@@ -104,7 +99,6 @@ $(document).ready(function() {
       return $('#error').text("Your tweet is too long!");
     }
     
-
     //Serialize the form data and send it to the server as a query string.
     $.ajax('/tweets', {
       method: 'POST',
@@ -118,7 +112,6 @@ $(document).ready(function() {
         console.log('POST error: oops, something went wrong', err);
       });
     
-
   });
 
 });

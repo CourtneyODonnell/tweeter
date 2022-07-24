@@ -1,11 +1,9 @@
 
 $(document).ready(function() {
   console.log('Document ready');
-
   const myTextArea = document.getElementById('tweet-text');
   const remainingCharsText = document.getElementById('tweet-counter');
   const maxChars = 140;
-
 
   //eventlistener for input
   myTextArea.addEventListener('input', () => {

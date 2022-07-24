@@ -12,9 +12,9 @@ article {
   margin-right: 1em;
   height: auto;
   padding: 1em;
- 
-} 
-.top-of-tweets {
+}
+
+.tweet-top {
   align-content: flex-start;
   width: 90%;
   font-weight: bold;
@@ -27,38 +27,45 @@ article {
   color: #5d3865;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
 .tweet-content {
   width: 90%;
   border-bottom: 10px ridge #f8d9f9;
   padding: 1em;
   font-size: 20px;
 }
-.bottom-of-tweets {
+
+.tweet-bottom {
   width: 100%;
 }
 
-.leftbottom-of-tweets {
+.left-tweet-bottom {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
   margin-left: 3em;
 }
-.rightbottom-of-tweets {
+
+.right-tweet-bottom {
   justify-content: flex-end;
   float: right;
   margin-right: 1em;
 }
+
 #report:hover {
   color: #ff00c3;
   text-decoration: bold;
 }
+
 #retweet:hover {
   color: #ff00c3;
   text-decoration: bold;
 }
+
 #like:hover {
   color: #ff00c3;
   text-decoration: bold;
 }
+
 article:hover {
   box-shadow: #ff00c36e 5px 5px 5px 5px;
 } 
