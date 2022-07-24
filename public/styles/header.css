@@ -16,3 +16,8 @@ img {
   justify-content: center;
   height: 40%;
 }
+.bottomHeader {
+  font-family: 'Bungee', cursive;
+  color: #FFFFFF;
+  text-shadow: #ff00c3 3px 3px 3px;
+}

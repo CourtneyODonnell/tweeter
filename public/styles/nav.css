@@ -13,8 +13,11 @@ nav {
   justify-content: space-between;
   top: 0;
  }
-span {
+.navbarLeft {
   font-family: 'Bungee', cursive;
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: darkmagenta 2px 2px 2px;
 }
 .navbarRight {
   margin-right: 1.5em;
@@ -25,12 +28,25 @@ span {
 
 #arrows-in-nav {
   color: #ff00c3; 
+  text-shadow: darkmagenta 2px 2px 2px;
  }
 
+.top {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 30px;
+  text-shadow: darkmagenta 1px 1px 1px;
+}
 
+@media only screen and (max-width: 700px) {
+  
+   .mainNav {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+  
+  }
 
-
-
+}
 
 
 

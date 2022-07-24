@@ -5,14 +5,18 @@
   display: flex;
 
 }
-.prompter {
-  border-bottom: 4mm ridge #f9d0fb;
-  height: 50px;
-  margin-top: 10px;
-}
+
 #tweet-text {
   width: 100%;
-  margin-top: 10px;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ff00c3;
+  border-radius: 4px;
+  background-color: #e4b9f768;
+  font-size: 26px;
+  resize: none;
+  box-shadow: #e4b9f7 2px 2px 2px;
 }
 #tweet-button {
   font-family: 'Bungee', cursive;
@@ -23,6 +27,8 @@
   text-align: center;
   display: inline-block;
   font-size: 24px;
+  box-shadow: #ff00c3 1px 1px 1px;
+
 }
 
 .rightSideInput {
@@ -50,6 +56,7 @@
   border: #ff0000 solid 2px;
   font-weight: bold;
   padding: 0.25em;
+  margin-top: 1em;
 }
 #relevant-error {
   color: #ff0000;
