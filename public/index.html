@@ -53,13 +53,17 @@
       <section class="new-tweet" id="compose-area">
         <div class="rightSideInput">
           <form class="tweetSubmit" action="/tweets" method="POST">
+
             <div class="prompter">
               <label for="tweet-text">What are you humming about?<br></label>
             </div>
             <div class="inputForm">
+              <!-- display validation error messages. -->
+              <section id="error">Error:</section>
               <textarea name="text" id="tweet-text"></textarea>
             </div>
             <div class="bottomForm">
+
               <button id="tweet-button" type="submit">Tweet</button>
 
               <output name="counter" class="counter" for="tweet-text" id="tweet-counter">140</output>
