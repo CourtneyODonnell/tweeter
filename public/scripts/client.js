@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 //prevent cross-site scripting attacks
 const escape = function(str) {
   let div = document.createElement("div");
@@ -82,10 +83,11 @@ $(document).ready(function() {
   $("form.tweetSubmit").on("submit", function(event) {
     console.log('tweet received from client, submitting to db');
     const newTweet = $(this).serialize();
+    const bnt = document.getElementById("bnt");
 
     // prevent listener's default behaviour
     event.preventDefault();
-     
+    
     //form validation
     const maxiumumChars = 140;
     const inputLength = $(this).find("textarea").val().length;
@@ -105,9 +107,13 @@ $(document).ready(function() {
       data: newTweet,
     })
       .then(function(tweet) {
-        $('.tweet-text').val('');
+        $('placeholder').val('What are you humming about? ...');
         loadTweets();
+        //reset the form
+        $('form.tweetSubmit').trigger('reset');
       })
+      // resource: https://www.tutorialrepublic.com/faq/how-to-reset-a-form-using-jquery.php#:~:text=Answer%3A%20Use%20the%20reset(),to%20reset%20a%20web%20form.
+      
       .catch((err) => {
         console.log('POST error: oops, something went wrong', err);
       });
